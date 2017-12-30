@@ -1,0 +1,32 @@
+{
+  "name": "step-resolver",
+  "version": "1.0.0",
+  "description": "Simple hierarchical resolver",
+  "license": "MIT",
+  "repository": "alexnaish/step-resolver",
+  "author": {
+    "name": "Alex Naish",
+    "email": "alex@naish.io",
+    "url": "naish.io"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "sequential",
+    "hierarchical",
+    "promise",
+    "resolver"
+  ],
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.1.0",
+    "sinon": "^4.1.3"
+  }
+}
