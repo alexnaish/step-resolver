@@ -3,7 +3,7 @@
 > Simple, hierarchical promise resolver.
 
 [![NPM Version][npm-image]][npm-url]
-[![Build][circle-image]][circle-url]
+[![Build][travis-image]][travis-url]
 
 ## Install
 
@@ -59,5 +59,5 @@ MIT
 
 [npm-image]: https://img.shields.io/npm/v/step-resolver.svg
 [npm-url]: https://npmjs.org/package/step-resolver
-[circle-image]: https://img.shields.io/circle/live-js/step-resolver/master.svg
-[circle-url]: https://circle-ci.org/live-js/step-resolver
+[travis-image]: https://travis-ci.org/alexnaish/step-resolver.svg?branch=master
+[travis-url]: https://travis-ci.org/alexnaish/step-resolver
