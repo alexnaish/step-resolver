@@ -18,6 +18,8 @@ yarn add step-resolver
 
 On several occasions I had the requirement of querying one store, if no result then querying the next and so on. A real example would be checking a memory cache, falling back to a database, falling back to a long-term filestorage system etc.
 
+All functions are expected to return a promise.
+
 ### Sample Usage
 
 The below example is one way of performing the above functionality, cache first, then database, then third party API. The after attributes of each resolver define what should happen if the method returns a truthy value. For instance, the cache resolver does not have an after function as there is no need, however if the cache resolver returns null and the database resolver returns a value, the after function of the database resolver could be to update the cache with the returned result.
