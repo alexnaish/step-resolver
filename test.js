@@ -1,16 +1,16 @@
-const expect = require('chai').expect;
-const sinon = require('sinon');
-const Resolver = require('./index');
+var expect = require('chai').expect;
+var sinon = require('sinon');
+var Resolver = require('./index');
 
 describe('Resolver', () => {
 
-    const mockArgs = 'test';
-    const mockResponse = 'response';
-    let resolvers = [];
-    let firstResolver;
-    let nextResolver;
-    let lastResolver;
-    let myResolver;
+    var mockArgs = 'test';
+    var mockResponse = 'response';
+    var resolvers = [];
+    var firstResolver;
+    var nextResolver;
+    var lastResolver;
+    var myResolver;
 
     beforeEach(() => {
 
