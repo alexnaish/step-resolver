@@ -114,7 +114,7 @@ describe('Resolver', () => {
 
         context('when a resolvers throws an error', () => {
 
-          let mockError = new Error('test error');
+          var mockError = new Error('test error');
           beforeEach(() => {
               firstResolver.method.resolves(null);
               nextResolver.method.rejects(mockError);
