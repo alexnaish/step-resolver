@@ -104,15 +104,31 @@ describe('Resolver', () => {
                 myResolver = Resolver(resolvers);
             });
 
-            it('should return a rejected promise', () => {
-                return myResolver.attempt(mockArgs).catch(res => {
-                    expect(res).to.be.an('error');
-                    expect(res).to.have.property('args');
-                    expect(res.args[0]).to.equal(mockArgs);
+            it('should resolve with null', () => {
+                return myResolver.attempt(mockArgs).then(res => {
+                    expect(res).to.equal(null);
                 });
             });
 
         });
+
+        context('when a resolvers throws an error', () => {
+
+          let mockError = new Error('test error');
+          beforeEach(() => {
+              firstResolver.method.resolves(null);
+              nextResolver.method.rejects(mockError);
+              lastResolver.method.resolves(null);
+              myResolver = Resolver(resolvers);
+          });
+
+          it('should reject with error', () => {
+              return myResolver.attempt(mockArgs).catch(error => {
+                  expect(error).to.equal(mockError);
+              });
+          });
+
+      });
 
     });
 

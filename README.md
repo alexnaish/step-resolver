@@ -18,7 +18,7 @@ yarn add step-resolver
 
 On several occasions I had the requirement of querying one store, if no result then querying the next and so on. A real example would be checking a memory cache, falling back to a database, falling back to a long-term filestorage system etc.
 
-All functions are expected to return a promise.
+All functions are expected to return a promise and have the supplied arguments applied.
 
 ### Sample Usage
 
@@ -32,7 +32,7 @@ const resolvers = [
     {
         method: (query, options) => {
             const newOptions = Object.assign(options, { authKey: process.env.SECRET_KEY });
-            return database.fetch(args, newOptions);
+            return database.fetch(query, newOptions);
         },
         after: cache.set
     },
@@ -52,6 +52,12 @@ const result = await myResolver.attempt(some, arguments, here);
 
 ```
 
+### Logic
+
+*  All resolver functions will be applied with the same parameters that `attempt` is called with.
+*  If any resolver throws an error, the step-resolver will immediately reject with the error.
+*  If all resolver functions have completed and there is still no result found, step-resolver will resolve with null.
+*  If any resolver function resolves with a value, step-resolver will call the `after` function (if present) and return the result.
 
 ## License
 

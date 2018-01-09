@@ -20,9 +20,7 @@ function Resolver (resolvers) {
                   return attempt.apply(null, arguments);
               }
 
-              var error = new Error('Unable to resolve');
-              error.args = arguments;
-              return Promise.reject(error);
+              return Promise.resolve(null);
           });
   }
   };
