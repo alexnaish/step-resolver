@@ -4,6 +4,9 @@
 
 [![NPM Version][npm-image]][npm-url]
 [![Build][travis-image]][travis-url]
+[![Dependencies][david-image]][david-url]
+[![Node Version][node-image]][node-url]
+
 
 ## Install
 
@@ -67,3 +70,9 @@ MIT
 [npm-url]: https://npmjs.org/package/step-resolver
 [travis-image]: https://travis-ci.org/alexnaish/step-resolver.svg?branch=master
 [travis-url]: https://travis-ci.org/alexnaish/step-resolver
+[david-image]: https://img.shields.io/david/alexnaish/step-resolver.svg
+[david-url]: https://david-dm.org/alexnaish/step-resolver
+[node-image]: https://img.shields.io/node/v/step-resolver.svg
+[node-url]: https://nodejs.org
+
+
