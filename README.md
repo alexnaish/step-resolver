@@ -33,25 +33,25 @@ const resolvers = [
         method: cache.get
     },
     {
-        method: (query, options) => {
+        method: (id, options) => {
             const newOptions = Object.assign(options, { authKey: process.env.SECRET_KEY });
-            return database.fetch(query, newOptions);
+            return database.fetch({ _id: id }, newOptions);
         },
-        after: cache.set
+        after: (result, { args }) => cache.set(args[0], result)
     },
     {
         method: service.fetchFromThirdParty,
-        after: (result) => {
+        after: (result, { args }) => {
             return Promise.all([
-                cache.set(result),
-                database.set(result)
+                cache.set(args[0], result),
+                database.set(args[0], result)
             ]);
         }
     }
 ];
 
 const myResolver = Resolver(resolvers);
-const result = await myResolver.attempt(some, arguments, here);
+const result = await myResolver.attempt(id, options);
 
 ```
 
@@ -60,7 +60,7 @@ const result = await myResolver.attempt(some, arguments, here);
 *  All resolver functions will be applied with the same parameters that `attempt` is called with.
 *  If any resolver throws an error, the step-resolver will immediately reject with the error.
 *  If all resolver functions have completed and there is still no result found, step-resolver will resolve with null.
-*  If any resolver function resolves with a value, step-resolver will call the `after` function (if present) and return the result.
+*  If any resolver function resolves with a value, step-resolver will call the `after` function (if present) and return the result. An additional parameter is passed to the function allowing it access to the supplied arguments (as per example).
 
 ## License
 
