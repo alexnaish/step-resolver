@@ -11,7 +11,7 @@ function Resolver (resolvers) {
           .then(res => {
               if (res) {
                   if (resolver.after) {
-                      return resolver.after(res, { arguments });
+                      return resolver.after(res, { args: arguments });
                   }
                   return res;
               }
