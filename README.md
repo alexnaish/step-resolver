@@ -3,17 +3,12 @@
 > Simple, hierarchical promise resolver.
 
 [![NPM Version][npm-image]][npm-url]
-[![Build][travis-image]][travis-url]
-[![Dependencies][david-image]][david-url]
 [![Node Version][node-image]][node-url]
-
 
 ## Install
 
 ```bash
-npm install -S step-resolver
-or
-yarn add step-resolver
+npm install step-resolver
 
 ```
 
@@ -57,10 +52,10 @@ const result = await myResolver.attempt(id, options);
 
 ### Logic
 
-*  All resolver functions will be applied with the same parameters that `attempt` is called with.
-*  If any resolver throws an error, the step-resolver will immediately reject with the error.
-*  If all resolver functions have completed and there is still no result found, step-resolver will resolve with null.
-*  If any resolver function resolves with a value, step-resolver will call the `after` function (if present) and return the result. An additional parameter is passed to the function allowing it access to the supplied arguments (as per example).
+- All resolver functions will be applied with the same parameters that `attempt` is called with.
+- If any resolver throws an error, the step-resolver will immediately reject with the error.
+- If all resolver functions have completed and there is still no result found, step-resolver will resolve with null.
+- If any resolver function resolves with a value, step-resolver will call the `after` function (if present) and return the result. An additional parameter is passed to the function allowing it access to the supplied arguments (as per example).
 
 ## License
 
@@ -68,11 +63,5 @@ MIT
 
 [npm-image]: https://img.shields.io/npm/v/step-resolver.svg
 [npm-url]: https://npmjs.org/package/step-resolver
-[travis-image]: https://travis-ci.org/alexnaish/step-resolver.svg?branch=master
-[travis-url]: https://travis-ci.org/alexnaish/step-resolver
-[david-image]: https://img.shields.io/david/alexnaish/step-resolver.svg
-[david-url]: https://david-dm.org/alexnaish/step-resolver
 [node-image]: https://img.shields.io/node/v/step-resolver.svg
 [node-url]: https://nodejs.org
-
-
