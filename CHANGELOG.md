@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/alexnaish/step-resolver/compare/v2.1.0...v2.1.1) (2024-09-30)
+
+
+### Bug Fixes
+
+* mark package as a module ([68e601d](https://github.com/alexnaish/step-resolver/commit/68e601db71403e75fa009586cfac09c37e5c3377))
+
 # [2.1.0](https://github.com/alexnaish/step-resolver/compare/v2.0.0...v2.1.0) (2024-09-30)
 
 
