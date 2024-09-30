@@ -45,7 +45,7 @@ const resolvers = [
     }
 ];
 
-const myResolver = Resolver(resolvers);
+const myResolver = new Resolver(resolvers);
 const result = await myResolver.attempt(id, options);
 
 ```

@@ -2,8 +2,8 @@
   "compilerOptions": {
     /* Basic Options */
     "lib": ["ES2023"],
-    "module": "node16",
-    "target": "ES2022",
+    "module": "esnext",
+    "target": "esnext",
     "declaration": true,                            /* Generates corresponding '.d.ts' file. */
     "outDir": "./lib/",                             /* Redirect output structure to the directory. */
     "removeComments": true,                         /* Do not emit comments to output. */
