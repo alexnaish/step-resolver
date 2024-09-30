@@ -1,9 +1,11 @@
-type ResolverStep<T extends any> = {
-    method: (props: T) => Promise<unknown> | unknown;
-    after?: (result: unknown, { args }: { args: T }) => any;
+type Awaitable<T> = T | Promise<T>;
+
+export type ResolverStep<T extends any, R extends any> = {
+    method: (props: T) => Awaitable<R | null | undefined>;
+    after?: (result: R, { args }: { args: T }) => Awaitable<R>;
 }
 
-const internalAttempt = async <T>(resolvers: ResolverStep<T>[], props: T, i = 0): Promise<unknown> => {
+const internalAttempt = async <T, R>(resolvers: ResolverStep<T, R>[], props: T, i = 0): Promise<R | null | undefined> => {
     const resolver = resolvers[i];
     const res = await resolver.method(props)
     if (res) {
@@ -17,10 +19,10 @@ const internalAttempt = async <T>(resolvers: ResolverStep<T>[], props: T, i = 0)
     return Promise.resolve(null);
 }
 
-class Resolver<T> {
-    private resolvers: ResolverStep<T>[];
+class Resolver<T, R> {
+    private resolvers: ResolverStep<T, R>[];
 
-    constructor(resolvers: ResolverStep<T>[]) {
+    constructor(resolvers: ResolverStep<T, R>[]) {
         this.resolvers = resolvers;
     }
 
