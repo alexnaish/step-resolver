@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/alexnaish/step-resolver/compare/v2.1.1...v2.1.2) (2024-09-30)
+
+
+### Bug Fixes
+
+* tighten types ([38dc2a2](https://github.com/alexnaish/step-resolver/commit/38dc2a277cc0cae0b2f247fb6ed354c71d220ea2))
+
 ## [2.1.1](https://github.com/alexnaish/step-resolver/compare/v2.1.0...v2.1.1) (2024-09-30)
 
 
