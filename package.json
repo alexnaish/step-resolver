@@ -3,6 +3,7 @@
   "version": "1.2.1",
   "description": "Simple hierarchical resolver",
   "license": "MIT",
+  "type": "module",
   "author": {
     "name": "Alex Naish",
     "email": "alex@naish.dev",
