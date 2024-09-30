@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/alexnaish/step-resolver/compare/v2.0.0...v2.1.0) (2024-09-30)
+
+
+### Features
+
+* now bundle as esmodule ([9099565](https://github.com/alexnaish/step-resolver/commit/90995654848d314756d48c2290805942b308de40))
+
 # [2.0.0](https://github.com/alexnaish/step-resolver/compare/v1.2.1...v2.0.0) (2024-07-04)
 
 
